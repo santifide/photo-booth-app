@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Evita scrollbars */
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#app-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: lightyellow; /* Color de fondo del layout */
+}
+
+#protector-pantalla {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+}
+
+#protector-pantalla.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#screensaver-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+#menu-principal,
+#capture-section,
+#review-draw-section,
+#video-record-section,
+#gallery-section {
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    width: 80%; /* Ajustar según sea necesario */
+    max-width: 600px; /* Ajustar según sea necesario */
+    height: 80%;
+    max-height: 700px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#webcam-preview, #video-preview {
+    width: 100%;
+    max-width: 640px; /* Ejemplo */
+    height: auto;
+    background-color: black;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+#countdown-display {
+    font-size: 3em;
+    font-weight: bold;
+    color: #333;
+}
+
+#flash-blanco {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    color: black;
+    opacity: 0;
+    transition: opacity 0.1s ease-out;
+    z-index: 999;
+}
+
+#flash-blanco.active {
+    opacity: 1;
+}
+
+#collage-canvas {
+    border: 1px solid #ccc;
+    cursor: crosshair;
+    background-color: #f0f0f0;
+}
+
+.drawing-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+#color-picker {
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+#gallery-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    overflow-y: auto;
+    width: 100%;
+    max-height: calc(100% - 100px); /* Ajusta según los botones de la galería */
+    padding: 10px;
+}
+
+.gallery-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-item img, .gallery-item video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-item-name {
+    font-size: 0.8em;
+    padding: 5px;
+    word-break: break-all;
+}

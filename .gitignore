@@ -1,0 +1,19 @@
+# Dependencias de Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env # Si usas variables de entorno
+
+# Carpetas de contenido generado/pruebas
+fondo-de-pantalla/*
+fotos-videos/*
+
+# Archivos de certificados generados
+*.key
+*.cert
+
+# Otros archivos de sistema operativo o temporales
+.DS_Store
+Thumbs.db
+*.log

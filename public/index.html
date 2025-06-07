@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photobooth</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="app-container">
+        <div id="protector-pantalla">
+            <img id="screensaver-image" src="" alt="Protector de Pantalla">
+        </div>
+
+        <div id="menu-principal">
+            <button id="btn-record-video">Grabar Videomensajes</button>
+            <button id="btn-take-1-photo">Sacar 1 Foto</button>
+            <button id="btn-take-2-photos">Sacar 2 Fotos</button>
+            <button id="btn-take-3-photos">Sacar 3 Fotos</button>
+            <button id="btn-take-4-photos">Sacar 4 Fotos</button>
+            <button id="btn-gallery">Galería</button>
+            <button id="btn-take-dsrl-photo">Sacar foto con DSLR</button>
+        </div>
+
+        <div id="capture-section" style="display: none;">
+            <video id="webcam-preview" autoplay playsinline></video>
+            <canvas id="photo-canvas" style="display: none;"></canvas>
+            <div id="countdown-display"></div>
+            <div id="flash-blanco">Sonríe</div>
+        </div>
+
+        <div id="review-draw-section" style="display: none;">
+            <canvas id="collage-canvas"></canvas>
+            <input type="color" id="color-picker" value="#FF0000">
+            <div class="drawing-controls">
+                <button id="btn-undo-draw">Retroceder</button>
+                <button id="btn-cancel-draw">Cancelar</button>
+                <button id="btn-retake-photo">Borrar y tomar otra foto nuevamente</button>
+                <button id="btn-save-collage">Guardar</button>
+            </div>
+        </div>
+
+        <div id="video-record-section" style="display: none;">
+            <video id="video-preview" autoplay muted></video>
+            <div id="video-countdown"></div>
+            <div id="video-controls">
+                <button id="btn-start-recording">Grabar</button>
+                <button id="btn-stop-recording" style="display: none;">Stop</button>
+                <button id="btn-play-video" style="display: none;">Reproducir</button>
+                <button id="btn-erase-video" style="display: none;">Borrar</button>
+                <button id="btn-retake-video" style="display: none;">Borrar y volver a grabar</button>
+                <button id="btn-save-video" style="display: none;">Guardar</button>
+            </div>
+        </div>
+
+        <div id="gallery-section" style="display: none;">
+            <h2>Galería</h2>
+            <div id="gallery-content"></div>
+            <button id="btn-back-to-menu-from-gallery">Volver al Menú</button>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
